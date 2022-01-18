@@ -2,10 +2,10 @@ import commonStyles from './common';
 
 const light = {
     ...commonStyles,
-    backgroundColor: '#eee',
+    backgroundColor: '#ddd',
     textColor: '#222',
-    headerBackgroundColor: "#bbb",
-    footerBackgroundColor: "#bbb",
+    headerBackgroundColor: "#fff",
+    footerBackgroundColor: "#fff",
 }
 
 export default light
