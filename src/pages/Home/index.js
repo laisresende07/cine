@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import tmdbAPI from '../../services/api'
-import Card from '../Card'
+import Card from '../../components/Card'
 
 function Home() {
     const [data, setData] = useState([])
@@ -15,7 +15,9 @@ function Home() {
             console.log(err)    
         )
     }, [])
-console.log(data)
+
+    console.log(data)
+
     return ( 
         <ul style={{padding: 0}}>
             {
