@@ -15,7 +15,7 @@ function Details() {
         .catch(err =>
             console.log(err)    
         )
-    }, [])
+    }, [id])
 
     console.log(data)
 
