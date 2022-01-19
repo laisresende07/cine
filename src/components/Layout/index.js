@@ -2,8 +2,7 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 import Header from '../Header'
-import Footer from '../Footer';
-import Routes from '../../Routes';
+import Routes from '../../Routes'
 
 function Layout({ onToggleTheme, selectedTheme }) {
     return (
@@ -13,10 +12,6 @@ function Layout({ onToggleTheme, selectedTheme }) {
                 selectedTheme={selectedTheme}
             />
             <Routes />
-            <Footer 
-                onToggleTheme={onToggleTheme} 
-                selectedTheme={selectedTheme}
-            />
         </BrowserRouter>
     );
 };

@@ -1,17 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import { Container } from './styles';
+import { Container } from './styles'
+import icon from '../../assets/icon.svg'
 
-export default function Footer({ onToggleTheme, selectedTheme }) {
+export default function Footer() {
 	return (
 		<Container>
 			<span>This product uses the TMDb API but is not endorsed or certified by TMDb.</span>
-			<button 
-				type="button"
-				onClick={onToggleTheme}
-			>
-				{selectedTheme === 'dark' ? '🌞' : '🌚'}
-			</button>
+			<img src={icon} height={40} />
 		</Container>
 	);
 }

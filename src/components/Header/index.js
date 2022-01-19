@@ -14,7 +14,7 @@ export default function Header({ onToggleTheme, selectedTheme }) {
 				<AiFillHome color={selectedTheme === 'dark' ? '#fff' : '#222'} size={24} />
 			</Link>
 
-			<img src={logo} alt={'cine'} height={60} />
+			<img src={logo} alt={'cine'} height={50} />
 
 			<button 
 				type="button"

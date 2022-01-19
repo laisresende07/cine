@@ -8,7 +8,7 @@ export const Container = styled.footer `
     padding: 0 24px;
     border-radius: 10px;
     justify-content: space-between;
-    margin-top: 24px;
+    margin: 24px 0 8px;
     span {
         font-size: 12px;
     }
