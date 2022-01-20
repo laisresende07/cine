@@ -30,6 +30,15 @@ export const CardContent = styled.div `
         box-shadow: 3px 3px 15px 5px rgba(0,0,0,0.6);   
         height: min-content;
     }
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 50%;
+        }
+    }
 `
 
 export const MovieInfo = styled.div `
@@ -48,6 +57,11 @@ export const MovieInfo = styled.div `
         font-size: 14px;
         text-align: justify;
         margin: 0;
+    }
+
+    @media (max-width: 500px) {
+        margin-left: 0;
+        margin-top: 32px;
     }
 `
 
@@ -70,6 +84,10 @@ export const MenuMovie = styled.div `
 
         & + button {
             margin-left: 32px;
+
+            @media (max-width: 500px) {
+                margin-left: 10px;
+            }
         }
 
         &:hover, &:focus, &:active {
@@ -117,7 +135,6 @@ export const Genres = styled.ul `
 export const SimilarMenu = styled.div `
     display: flex;
     flex-wrap: wrap;
-    font-size: 14px;
     margin-top: 32px;
 
     a {
@@ -138,11 +155,60 @@ export const SimilarMenu = styled.div `
             box-shadow: 3px 2px 12px 4px rgba(0,0,0,0.5); 
         }
     }
+
+    @media (max-width: 500px) {
+        justify-content: space-between;
+        
+        a {
+            width: 30%;
+
+            img {
+                width: 98%
+            }
+        }
+    }
 `
 
 export const GalleryMenu = styled.section ` 
     display: flex;
     justify-content: center;
-    margin-top: 32px;
+    margin: 32px -2.5% 0;
     flex-wrap: wrap;
+
+    .video {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 2.5% 20px;
+        width: 45%;
+        aspect-ratio: 6/4;
+
+        span {
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        margin: 32px 0 0;
+        flex-direction: column;
+
+        .video {
+            margin: 10px 0 20px;
+            width: 100%;
+
+            span {
+                margin-bottom: 10px;
+            }
+
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 `

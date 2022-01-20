@@ -66,14 +66,15 @@ function Details() {
                         <>
                             {
                                 data.videos.results.map(video => (     
-                                    <iframe 
-                                        key={video.key}
-                                        width="420" 
-                                        height="315" 
-                                        title={video.type} 
-                                        src={`https://www.youtube.com/embed/${video.key}`} 
-                                                    allowFullScreen
-                                    />
+                                    <div className='video'>
+                                        <span>{video.type}</span>  
+                                        <iframe 
+                                            key={video.key}
+                                            title={video.type} 
+                                            src={`https://www.youtube.com/embed/${video.key}`} 
+                                                        allowFullScreen
+                                        />
+                                    </div>
                                 ))
                             }
                         </>
