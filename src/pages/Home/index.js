@@ -16,7 +16,7 @@ function Home() {
         )
     }, [])
 
-    console.log(data)
+    data.length > 0 && console.debug(data)
 
     return ( 
         <ul style={{padding: 0}}>

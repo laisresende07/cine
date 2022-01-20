@@ -7,7 +7,7 @@ export default function Footer() {
 	return (
 		<Container>
 			<span>This product uses the TMDb API but is not endorsed or certified by TMDb.</span>
-			<img src={icon} height={40} alt='icon' />
+			<img src={icon} height={32} alt='icon' />
 		</Container>
 	);
 }
