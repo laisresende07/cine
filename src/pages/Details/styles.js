@@ -144,4 +144,5 @@ export const GalleryMenu = styled.section `
     display: flex;
     justify-content: center;
     margin-top: 32px;
+    flex-wrap: wrap;
 `
