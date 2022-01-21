@@ -8,6 +8,20 @@ export const Container = styled.header `
     padding: 0 24px;
     border-radius: 10px;
     justify-content: space-between;
+    div {
+        display: flex;
+        align-items: center;
+
+        a + a {
+            text-decoration: none;
+            color: ${({ theme }) => theme.textColor};
+            margin-left: 20px;
+
+            &:hover {
+                color: ${({ theme }) => theme.red}
+            }
+        }
+    }
     button {
         font-size: 16px;
         cursor: pointer;

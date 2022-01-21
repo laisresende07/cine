@@ -5,7 +5,9 @@ import { useTransition, animated } from 'react-spring'
 import Home from './pages/Home'
 import Details from './pages/Details'
 import NotFound from './pages/NotFound'
+import Movies from './pages/Movies'
 import Footer from './components/Footer'
+import TvShows from './pages/TvShows'
 
 function Routes() {
     const location = useLocation()
@@ -20,6 +22,8 @@ function Routes() {
             <Switch location={item}>
                 <Route exact path='/' component={Home} />
                 <Route path='/details/:id' component={Details} />
+                <Route path='/movies' component={Movies} />
+                <Route path='/tvshows' component={TvShows} />
                 <Route component={NotFound} />
             </Switch>
             <Footer />

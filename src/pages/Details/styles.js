@@ -97,7 +97,7 @@ export const MenuMovie = styled.div `
         }
 
         &.selected {
-            color: #d11111;
+            color: ${({ theme }) => theme.red};
         }
     }
 `
@@ -111,7 +111,7 @@ export const DetailsMenu = styled.div `
 
     a {
         text-decoration: none;
-        color: #d11111;
+        color: ${({ theme }) => theme.red};
         font-weight: 600;
     }
 `

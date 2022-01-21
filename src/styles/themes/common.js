@@ -5,6 +5,7 @@ const common = {
         large: 24,
     },
     borderRadius: '10px',
+    red: '#d11111'
 }
 
 export default common
