@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 import { baseImgURL } from '../../services/api'
 import { Container, BackdropImg, CardContent, MovieInfo } from './styles'
 
-function Card({ movie }) {
+function Card({ id, backdropImg, poster, title, overview, type }) {
     return (
-        <Link to={`/details/${movie.id}`} style={{textDecoration: 'none'}}>
+        <Link to={`/${type}/${id}`} style={{textDecoration: 'none'}}>
             <Container>
-                <BackdropImg backgroundImage={`${baseImgURL}w500${movie.backdrop_path}`} alt={`${movie.title}`} />
+                <BackdropImg backgroundImage={`${baseImgURL}w500${backdropImg}`} alt={`${title}`} />
                 <CardContent>
-                    <img src={`${baseImgURL}w154${movie.poster_path}`} alt={`${movie.title}`}/>
+                    <img src={`${baseImgURL}w154${poster}`} alt={`${title}`}/>
                     <MovieInfo>
-                        <h3>{movie.title}</h3>
-                        <p>{movie.overview}</p>
+                        <h3>{title}</h3>
+                        <p>{overview}</p>
                     </MovieInfo>
                 </CardContent>
             </Container>

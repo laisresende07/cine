@@ -7,7 +7,7 @@ import Details from './pages/Details'
 import NotFound from './pages/NotFound'
 import Movies from './pages/Movies'
 import Footer from './components/Footer'
-import TvShows from './pages/TvShows'
+import Tv from './pages/Tv'
 
 function Routes() {
     const location = useLocation()
@@ -21,9 +21,9 @@ function Routes() {
         <animated.div style={props}>
             <Switch location={item}>
                 <Route exact path='/' component={Home} />
-                <Route path='/details/:id' component={Details} />
+                <Route path='/:type/:id' component={Details} />
                 <Route path='/movies' component={Movies} />
-                <Route path='/tvshows' component={TvShows} />
+                <Route path='/tv' component={Tv} />
                 <Route component={NotFound} />
             </Switch>
             <Footer />

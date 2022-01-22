@@ -5,13 +5,13 @@ import tmdbAPI, { baseImgURL } from '../../services/api'
 import { Container, BackdropImg, CardContent, MovieInfo, MenuMovie, DetailsMenu, Genres, SimilarMenu, GalleryMenu } from './styles'
 
 function Details() {
-    const { id } = useParams()
+    const { id, type } = useParams()
     const [data, setData] = useState()
     const [option, setOption] = useState('details')
 
     useEffect(() => {
         tmdbAPI
-        .get(`movie/${id}`, 
+        .get(`${type}/${id}`, 
         { params: { append_to_response: 'videos,similar' }
         })
         .then(res =>
@@ -20,7 +20,7 @@ function Details() {
         .catch(err =>
             console.log(err)    
         )
-    }, [id])
+    }, [id, type])
 
     data && console.debug(data)
 
@@ -86,11 +86,14 @@ function Details() {
         return (
             <DetailsMenu>
                 {
-                    data.runtime !== 0 && <span>Duração: {data.runtime} min</span>
+                    (data.runtime && data.runtime !== 0) && <span>Duração: {data.runtime} min</span>
                 }
-                <span>Data de lançamento: {parseDate(data.release_date)}</span>
                 {
-                    data.budget !== 0 && <span>Orçamento: {new Intl.NumberFormat('us', 
+                    data.release_date &&
+                    <span>Data de lançamento: {parseDate(data.release_date)}</span>
+                }
+                {
+                    (data.budget && data.budget !== 0) && <span>Orçamento: {new Intl.NumberFormat('us', 
                     { style: 'currency', currency: 'USD'}).format(data.budget) }</span>
                 }
                 <span>Status: {translateStatus(data.status)}</span>

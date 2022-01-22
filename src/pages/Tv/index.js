@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import tmdbAPI from '../../services/api'
 import Card from '../../components/Card'
 
-function Movies() {
+function Tv() {
     const [data, setData] = useState([])
 
     useEffect(() => {
         tmdbAPI
-        .get('/movie/popular')
+        .get('/tv/popular')
         .then(res =>
             setData(res.data.results)
         )
@@ -22,15 +22,15 @@ function Movies() {
         <ul style={{padding: 0}}>
             {
                 data &&
-                data.map(movie => 
+                data.map(tv => 
                     <Card 
-                        key={movie.id} 
-                        id={movie.id}
-                        type={'movie'}
-                        title={movie.title} 
-                        backdropImg={movie.backdrop_path} 
-                        poster={movie.poster_path}
-                        overview={movie.overview}
+                        key={tv.id} 
+                        id={tv.id}
+                        type={'tv'}
+                        title={tv.name} 
+                        backdropImg={tv.backdrop_path} 
+                        poster={tv.poster_path}
+                        overview={tv.overview}
                     />
                 )
             }
@@ -38,4 +38,4 @@ function Movies() {
     )
 }
 
-export default Movies
+export default Tv

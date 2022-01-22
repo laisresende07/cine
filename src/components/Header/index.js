@@ -15,7 +15,7 @@ export default function Header({ onToggleTheme, selectedTheme }) {
 				</Link>
 
 				<Link to={'/movies'}>Filmes</Link>
-				<Link to={'/tvshows'}>Séries</Link>
+				<Link to={'/tv'}>Séries</Link>
 			</div>
 			
 			<button 
