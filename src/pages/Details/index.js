@@ -41,6 +41,8 @@ function Details() {
             return 'Lançado';
         } else if (status==='Canceled') {
             return 'Cancelado';
+        } else if (status==='Returning Series') {
+            return 'Série retornando';
         } 
         return status;
     }
@@ -51,7 +53,8 @@ function Details() {
                 <SimilarMenu>
                     {
                         data.similar.results.map(title => (
-                            <Link to={`/details/${title.id}`}>
+                            <Link key={title.id} to={`/${type}/${title.id}`}>
+                                {console.log(title.id)}
                                 <img src={`${baseImgURL}w154${title.poster_path}`} alt={`${title.title}`}/>
                             </Link>
                         ))
@@ -66,10 +69,9 @@ function Details() {
                         <>
                             {
                                 data.videos.results.map(video => (     
-                                    <div className='video'>
+                                    <div key={video.key} className='video'>
                                         <span>{video.type}</span>  
                                         <iframe 
-                                            key={video.key}
                                             title={video.type} 
                                             src={`https://www.youtube.com/embed/${video.key}`} 
                                                         allowFullScreen
@@ -87,6 +89,15 @@ function Details() {
             <DetailsMenu>
                 {
                     (data.runtime && data.runtime !== 0) && <span>Duração: {data.runtime} min</span>
+                }
+                {
+                    (data.number_of_seasons) && <span>Temporadas: {data.number_of_seasons}</span>
+                }
+                {
+                    (data.number_of_episodes) && <span>Episódios: {data.number_of_episodes}</span>
+                }
+                {
+                    (data.episode_run_time && data.episode_run_time.length > 0) && <span>Duração dos episódios: {data.episode_run_time[0]} min</span>
                 }
                 {
                     data.release_date &&
@@ -111,8 +122,8 @@ function Details() {
                     <CardContent>
                         <img src={`${baseImgURL}w185${data.poster_path}`} alt={`${data.title}`}/>
                         <MovieInfo>
-                            <h3>{data.title}</h3>
-                            <p>{data.overview}</p>
+                            <h3>{data.title || data.name}</h3>
+                            <p>{data.overview || 'Sem resumo disponível.'}</p>
                             <Genres>
                                 {
                                     data.genres.map(genre => 

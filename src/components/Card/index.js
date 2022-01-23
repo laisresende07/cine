@@ -12,7 +12,7 @@ function Card({ id, backdropImg, poster, title, overview, type }) {
                     <img src={`${baseImgURL}w154${poster}`} alt={`${title}`}/>
                     <MovieInfo>
                         <h3>{title}</h3>
-                        <p>{overview}</p>
+                        <p>{overview || 'Sem resumo disponível.'}</p>
                     </MovieInfo>
                 </CardContent>
             </Container>
