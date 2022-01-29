@@ -43,6 +43,8 @@ function Details() {
             return 'Cancelado';
         } else if (status==='Returning Series') {
             return 'Série retornando';
+        }  else if (status==='Ended') {
+            return 'Finalizada';
         } 
         return status;
     }

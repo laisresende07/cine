@@ -1,8 +1,19 @@
 import React from 'react'
 
+import movienight from '../../assets/movienight.svg'
+import { Container } from './style'
+
 function Home() {
     return ( 
-        <h1>Landing page</h1>
+        <Container>
+            <div>
+                <h1>cine</h1>
+                <h2 style={{fontWeight: 500}}>
+                    Aqui você encontra informações sobre filmes e séries do momento
+                </h2>
+            </div>
+            <img src={movienight} />
+        </Container>
     )
 }
 
