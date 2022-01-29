@@ -12,7 +12,7 @@ function Home() {
                     Aqui você encontra informações sobre filmes e séries do momento
                 </h2>
             </div>
-            <img src={movienight} />
+            <img alt={'movie night'} src={movienight} />
         </Container>
     )
 }
